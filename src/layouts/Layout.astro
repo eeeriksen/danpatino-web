@@ -1,3 +1,9 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,7 +14,9 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
@@ -18,5 +26,1894 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	@font-face {
+		font-family: Montserrat;
+		src: url(./fonts/Montserrat-Regular.ttf);
+		font-weight: normal;
+	}
+
+	@font-face {
+		font-family: MontserratB;
+		src: url(./fonts/Montserrat-ExtraBold.ttf);
+		font-weight: bold;
+	}
+
+	@font-face {
+		font-family: Philosopher;
+		src: url(./fonts/Philosopher-Bold.ttf);
+		font-weight: normal;
+	}
+
+	* {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		font-family: "Montserrat";
+		color: #444;
+		overflow-x: hidden;
+	}
+
+	*::-moz-selection {
+		background: #888;
+		color: white;
+	}
+
+	*::selection {
+		background: #888;
+		color: white;
+	}
+
+	.container {
+		width: 100%;
+		background-color: #efefef;
+		padding: 25px;
+	}
+
+	.error,
+	.success {
+		margin-left: 58px;
+		color: #8d8d8d;
+		font-size: 13px;
+		display: block;
+	}
+
+	/* MEDIA QUERIES :S */
+	@media (max-width: 5000px) and (min-width: 0) {
+		header#all-header.hide,
+		header#ini-header.hide {
+			-webkit-transform: translateY(-160px);
+			-ms-transform: translateY(-160px);
+			transform: translateY(-160px);
+		}
+
+		header {
+			padding: 0 100px;
+			height: 160px;
+		}
+
+		header nav.name a {
+			font-size: 90px;
+		}
+
+		header nav.menu a {
+			font-size: 38px;
+		}
+
+		header nav.menu ul.social li svg.icon-facebook,
+		header nav.menu ul.social li svg.icon-instagram {
+			width: 75px;
+			height: 75px;
+			padding: 13px;
+		}
+
+		.container-contact {
+			padding: 250px;
+		}
+
+		.container-contact section.contact {
+			padding: 190px 90px;
+		}
+
+		.container-contact section.contact .text h1.name {
+			font-size: 60px;
+			margin-bottom: 45px;
+		}
+
+		.container-contact section.contact .text hr {
+			width: 150px;
+			border: 3px solid #888;
+			margin-bottom: 25px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 37px;
+			margin-bottom: 18px;
+			line-height: 63px;
+			padding-right: 100px;
+		}
+
+		.container-contact section.contact .text a {
+			font-size: 34px;
+			margin-bottom: 15px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 250px 350px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 72px;
+			margin-bottom: 120px;
+		}
+
+		.container-contact section.contact-form form input[type="text"] {
+			margin-bottom: 5px;
+			height: 120px;
+			border-bottom: 2px solid #efefef;
+			padding: 0 60px;
+			font-size: 37px;
+		}
+
+		.container-contact section.contact-form form span {
+			margin-left: 54px;
+			font-size: 22px;
+			margin-bottom: 15px;
+		}
+
+		.container-contact section.contact-form form textarea {
+			border-bottom: 2px solid #efefef;
+			padding: 0 60px;
+			height: 260px;
+			font-size: 37px;
+		}
+
+		.container-contact
+			section.contact-form
+			form
+			input::-webkit-input-placeholder,
+		.container-contact
+			section.contact-form
+			form
+			textarea::-webkit-input-placeholder {
+			color: white;
+		}
+
+		.container-contact
+			section.contact-form
+			form
+			input:-ms-input-placeholder,
+		.container-contact
+			section.contact-form
+			form
+			textarea:-ms-input-placeholder {
+			color: white;
+		}
+
+		.container-contact
+			section.contact-form
+			form
+			input::-ms-input-placeholder,
+		.container-contact
+			section.contact-form
+			form
+			textarea::-ms-input-placeholder {
+			color: white;
+		}
+
+		.container-contact section.contact-form form input::placeholder,
+		.container-contact section.contact-form form textarea::placeholder {
+			color: white;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			height: 110px;
+			width: 350px;
+			font-size: 70px;
+			-webkit-transform: translateY(-7px);
+			-ms-transform: translateY(-7px);
+			transform: translateY(-7px);
+			text-shadow: 0px 7px 17px rgba(0, 0, 0, 0.3);
+		}
+
+		section.header-image {
+			padding: 0 250px;
+			height: 1500px;
+		}
+
+		section.header-image article.presentation {
+			width: 50%;
+		}
+
+		section.header-image article.presentation p.ciao {
+			font-size: 70px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 80px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 41px;
+			line-height: 80px;
+		}
+
+		section.header-image article.presentation p.info {
+			line-height: 65px;
+			font-size: 45px;
+		}
+
+		.container {
+			padding: 0;
+		}
+
+		.container section.categories {
+			padding: 300px 250px;
+			margin: 0;
+		}
+
+		.container section.categories article {
+			padding: 200px 80px;
+		}
+
+		.container section.categories article .text {
+			padding: 70px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 70px;
+		}
+
+		.container section.categories article .text p {
+			margin-top: 40px;
+			line-height: 56px;
+			font-size: 40px;
+		}
+
+		section.video .group-video {
+			width: 60%;
+			left: 250px;
+		}
+
+		section.video .group-video h2 {
+			font-size: 70px;
+		}
+
+		section.video .group-video p {
+			font-size: 40px;
+			line-height: 50px;
+			width: 100%;
+		}
+
+		section.quote {
+			padding: 350px 0;
+		}
+
+		section.quote p {
+			font-size: 120px;
+			border-left: 24px solid #888;
+		}
+
+		body.portfolio .portfolio {
+			padding: 250px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu {
+			padding: 15px;
+			margin-bottom: 12px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu a {
+			font-size: 35px;
+			padding: 0 32px;
+		}
+
+		body.portfolio .portfolio #overlay #full-image #f-img #close img {
+			width: 60px;
+			height: 60px;
+		}
+
+		body.portfolio .portfolio #overlay #full-image #f-img #next img,
+		body.portfolio .portfolio #overlay #full-image #f-img #previous img {
+			width: 80px;
+			height: 80px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 100px 55px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 650px;
+		}
+
+		footer {
+			height: 140px;
+			padding: 0 100px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 32px;
+		}
+	}
+
+	@media (max-width: 2880px) and (min-width: 0) {
+		header#all-header.hide,
+		header#ini-header.hide {
+			-webkit-transform: translateY(-120px);
+			-ms-transform: translateY(-120px);
+			transform: translateY(-120px);
+		}
+
+		header {
+			padding: 0 70px;
+			height: 120px;
+		}
+
+		header nav.name a {
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			font-size: 65px;
+		}
+
+		header nav.name a:hover {
+			color: #bbb;
+		}
+
+		header nav.menu a {
+			font-size: 26px;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+		header nav.menu a:hover {
+			color: #bbb;
+		}
+
+		header nav.menu ul.social li svg.icon-facebook,
+		header nav.menu ul.social li svg.icon-instagram {
+			width: 50px;
+			height: 50px;
+			padding: 8px;
+		}
+
+		body.portfolio .portfolio {
+			padding: 170px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu a {
+			font-size: 27px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 70px 55px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 605px;
+		}
+
+		header nav.name a,
+		header nav.menu a {
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+		header nav.name a:hover,
+		header nav.menu a:hover {
+			color: #bbb;
+		}
+
+		section.header-image {
+			padding: 0 150px;
+			height: 1200px;
+		}
+
+		section.header-image article.presentation p.ciao {
+			font-size: 60px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 60px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 30px;
+			line-height: 60px;
+		}
+
+		section.header-image article.presentation p.info {
+			line-height: 50px;
+			font-size: 35px;
+		}
+
+		.container {
+			padding: 0;
+		}
+
+		.container section.categories {
+			padding: 250px 100px;
+			margin: 0;
+		}
+
+		.container section.categories article {
+			padding: 100px 70px;
+		}
+
+		.container section.categories article .text {
+			padding: 50px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 60px;
+		}
+
+		.container section.categories article .text p {
+			line-height: 42px;
+			font-size: 32px;
+		}
+
+		section.video .group-video {
+			width: 60%;
+			left: 150px;
+		}
+
+		section.video .group-video p {
+			font-size: 30px;
+			line-height: 40px;
+		}
+
+		section.quote {
+			padding: 340px 0;
+		}
+
+		section.quote p {
+			font-size: 80px;
+			padding: 20px 140px;
+			border-left: 18px solid #888;
+		}
+
+		.container-contact {
+			padding: 170px;
+		}
+
+		.container-contact section.contact {
+			padding: 120px 90px;
+		}
+
+		.container-contact section.contact .text h1.name {
+			font-size: 55px;
+			margin-bottom: 45px;
+		}
+
+		.container-contact section.contact .text hr {
+			width: 150px;
+			border: 3px solid #888;
+			margin-bottom: 25px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 28px;
+			margin-bottom: 42px;
+			line-height: 42px;
+			padding-right: 60px;
+		}
+
+		.container-contact section.contact .text a {
+			font-size: 26px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 160px 350px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 55px;
+			margin-bottom: 120px;
+		}
+
+		.container-contact section.contact-form form input[type="text"] {
+			margin-bottom: 10px;
+			height: 80px;
+			font-size: 32px;
+		}
+
+		.container-contact section.contact-form form textarea {
+			border-bottom: 2px solid #efefef;
+			padding: 0 60px;
+			height: 260px;
+			font-size: 32px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			height: 110px;
+			width: 290px;
+			font-size: 50px;
+			-webkit-transform: translateY(-7px);
+			-ms-transform: translateY(-7px);
+			transform: translateY(-7px);
+			text-shadow: 0px 7px 17px rgba(0, 0, 0, 0.3);
+		}
+
+		footer {
+			height: 100px;
+			padding: 0 70px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 26px;
+		}
+	}
+
+	@media (max-width: 2200px) and (min-width: 0) {
+		header#all-header.hide,
+		header#ini-header.hide {
+			-webkit-transform: translateY(-90px);
+			-ms-transform: translateY(-90px);
+			transform: translateY(-90px);
+		}
+
+		header {
+			padding: 0 60px;
+			height: 90px;
+		}
+
+		header nav.name a {
+			font-size: 55px;
+		}
+
+		header nav.menu a {
+			font-size: 22px;
+		}
+
+		header nav.menu ul.social li svg.icon-facebook,
+		header nav.menu ul.social li svg.icon-instagram {
+			width: 36px;
+			height: 36px;
+			padding: 5px;
+		}
+
+		body.portfolio .portfolio {
+			padding: 110px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu {
+			padding: 10px;
+			margin-bottom: 8px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu a {
+			font-size: 20px;
+		}
+
+		body.portfolio .portfolio #overlay #full-image #f-img #close img {
+			width: 40px;
+			height: 40px;
+		}
+
+		body.portfolio .portfolio #overlay #full-image #f-img #next img,
+		body.portfolio .portfolio #overlay #full-image #f-img #previous img {
+			width: 40px;
+			height: 40px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 40px 30px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 469px;
+		}
+
+		section.header-image {
+			padding: 0 110px;
+			height: 900px;
+		}
+
+		section.header-image article.presentation p.ciao {
+			font-size: 50px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 45px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 23px;
+			line-height: 40px;
+		}
+
+		section.header-image article.presentation p.info {
+			line-height: 30px;
+			font-size: 22px;
+		}
+
+		.container section.categories {
+			padding: 160px 70px;
+		}
+
+		.container section.categories article {
+			padding: 60px 40px;
+		}
+
+		.container section.categories article .text {
+			padding: 40px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 45px;
+		}
+
+		.container section.categories article .text p {
+			line-height: 30px;
+			font-size: 22px;
+		}
+
+		section.video .group-video {
+			width: 100%;
+			left: 0;
+			padding: 100px;
+		}
+
+		section.video .group-video h2 {
+			font-size: 35px;
+		}
+
+		section.video .group-video p {
+			font-size: 22px;
+			line-height: 30px;
+			width: 70%;
+		}
+
+		section.quote {
+			padding: 250px 0;
+		}
+
+		section.quote p {
+			font-size: 60px;
+			border-left: 12px solid #888;
+		}
+
+		.container-contact {
+			padding: 140px 110px 110px 110px;
+		}
+
+		.container-contact section.contact {
+			padding: 90px 60px;
+		}
+
+		.container-contact section.contact .text h1.name {
+			font-size: 40px;
+			margin-bottom: 25px;
+		}
+
+		.container-contact section.contact .text hr {
+			width: 110px;
+			border: 2px solid #888;
+			margin-bottom: 25px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 22px;
+			margin-bottom: 22px;
+			line-height: 40px;
+			padding-right: 30px;
+		}
+
+		.container-contact section.contact .text a {
+			font-size: 20px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 130px 230px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 40px;
+			margin-bottom: 100px;
+		}
+
+		.container-contact section.contact-form form input[type="text"] {
+			font-size: 28px;
+		}
+
+		.container-contact section.contact-form form textarea {
+			border-bottom: 2px solid #efefef;
+			padding: 0 60px;
+			height: 260px;
+			font-size: 28px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			height: 110px;
+			width: 250px;
+			font-size: 40px;
+			-webkit-transform: translateY(-7px);
+			-ms-transform: translateY(-7px);
+			transform: translateY(-7px);
+			text-shadow: 0px 7px 17px rgba(0, 0, 0, 0.3);
+		}
+
+		footer {
+			height: 80px;
+			padding: 0 60px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 20px;
+		}
+	}
+
+	@media (max-width: 1900px) and (min-width: 0) {
+		body.portfolio .portfolio .container-images .image {
+			width: 478px;
+		}
+	}
+
+	@media (max-width: 1700px) and (min-width: 0) {
+		header {
+			padding: 0 40px;
+			height: 60px;
+		}
+
+		header nav.name a {
+			font-size: 40px;
+		}
+
+		header nav.menu a {
+			font-size: 15px;
+		}
+
+		header nav.menu ul.social li svg.icon-facebook,
+		header nav.menu ul.social li svg.icon-instagram {
+			width: 31px;
+			height: 31px;
+			padding: 5px;
+		}
+
+		section.header-image {
+			height: 600px;
+			padding: 0 90px;
+		}
+
+		section.header-image article.presentation p.ciao {
+			font-size: 30px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 33px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 17px;
+			line-height: 25px;
+		}
+
+		section.header-image article.presentation p.info {
+			line-height: 22px;
+			font-size: 16px;
+		}
+
+		.container section.categories {
+			padding: 130px 50px;
+		}
+
+		.container section.categories article {
+			padding: 60px 40px;
+		}
+
+		.container section.categories article .text {
+			padding: 32px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 35px;
+		}
+
+		.container section.categories article .text p {
+			margin-top: 20px;
+			line-height: 22px;
+			font-size: 16px;
+		}
+
+		section.video .group-video h2 {
+			font-size: 32px;
+		}
+
+		section.video .group-video p {
+			font-size: 16px;
+			line-height: 22px;
+		}
+
+		section.quote {
+			padding: 200px 0;
+		}
+
+		section.quote p {
+			font-size: 38px;
+			padding: 15px 80px;
+			border-left: 10px solid #888;
+		}
+
+		body.portfolio .portfolio {
+			padding: 90px 100px 80px 100px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu {
+			margin-bottom: 3px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu a {
+			padding: 0 10px;
+			font-size: 14px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 20px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 366px;
+		}
+
+		body.portfolio .portfolio .container-images .image img {
+			padding: 7px;
+		}
+
+		.container-contact {
+			padding: 110px 100px 100px 100px;
+		}
+
+		.container-contact section.contact {
+			padding: 90px 60px;
+		}
+
+		.container-contact section.contact .text h1.name {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+
+		.container-contact section.contact .text hr {
+			width: 110px;
+			border: 2px solid #888;
+			margin-bottom: 25px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 16px;
+			margin-bottom: 22px;
+			line-height: 25px;
+			padding-right: 30px;
+		}
+
+		.container-contact section.contact .text a {
+			font-size: 15px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 80px 200px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 30px;
+			margin-bottom: 60px;
+		}
+
+		.container-contact section.contact-form form input[type="text"] {
+			margin-bottom: 5px;
+			height: 55px;
+			border-bottom: 1px solid #efefef;
+			font-size: 18px;
+		}
+
+		.container-contact section.contact-form form span {
+			font-size: 16px;
+		}
+
+		.container-contact section.contact-form form textarea {
+			border-bottom: 2px solid #efefef;
+			padding: 0 60px;
+			height: 130px;
+			font-size: 18px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			height: 80px;
+			width: 210px;
+			font-size: 30px;
+			-webkit-transform: translateY(-7px);
+			-ms-transform: translateY(-7px);
+			transform: translateY(-7px);
+			text-shadow: 0px 7px 17px rgba(0, 0, 0, 0.3);
+		}
+
+		footer {
+			height: 60px;
+			padding: 0 40px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 15px;
+		}
+	}
+
+	@media (max-width: 1350px) and (min-width: 0) {
+		.container section.categories {
+			padding: 50px 35px;
+		}
+
+		.container section.categories article {
+			padding: 70px 35px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 32px;
+		}
+
+		.container section.categories article .text p {
+			font-size: 15px;
+			line-height: 23px;
+		}
+
+		section.header-image {
+			height: 550px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 40px 10px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 365px;
+		}
+
+		body.portfolio .portfolio .container-images .image img {
+			padding: 5px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 90px 140px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			width: 125px;
+			font-size: 26px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 323px;
+		}
+
+		body.portfolio .portfolio #overlay #full-image #f-img #close img {
+			width: 30px;
+			height: 30px;
+		}
+
+		body.portfolio .portfolio #overlay #full-image #f-img #next img,
+		body.portfolio .portfolio #overlay #full-image #f-img #previous img {
+			width: 40px;
+			height: 40px;
+		}
+
+		footer {
+			height: 60px;
+			padding: 0 40px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 13px;
+		}
+	}
+
+	@media (max-width: 1200px) and (min-width: 0) {
+		header {
+			padding: 0 40px;
+			height: 50px;
+		}
+
+		header nav.name a {
+			font-size: 34px;
+		}
+
+		header nav.menu a {
+			font-size: 13px;
+		}
+
+		header nav.menu ul.social li svg.icon-facebook,
+		header nav.menu ul.social li svg.icon-instagram {
+			width: 24px;
+			height: 24px;
+			padding: 4px;
+		}
+
+		body.portfolio .portfolio {
+			padding: 80px 30px 30px 30px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 30px 10px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 310px;
+		}
+
+		body.portfolio .portfolio .container-images .image img {
+			padding: 5px;
+		}
+
+		section.header-image article.presentation p.ciao {
+			font-size: 28px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 30px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 15px;
+		}
+
+		.container section.categories article .text {
+			padding: 0;
+			padding-left: 25px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 30px;
+		}
+
+		.container section.categories article .text p {
+			padding: 0 20px;
+			font-size: 14px;
+			line-height: 21px;
+		}
+
+		.container section.categories article.ritratti .text {
+			padding: 0;
+			padding-right: 25px;
+		}
+
+		.container section.categories article.ritratti .text h2 {
+			padding: 0 40px;
+		}
+
+		.container section.categories article.ritratti .text p {
+			padding: 0 110px;
+		}
+
+		section.video .group-video {
+			padding: 60px;
+		}
+
+		section.video .group-video p {
+			font-size: 15px;
+		}
+
+		section.quote {
+			padding: 150px 0;
+		}
+
+		section.header-image article.presentation {
+			width: 60%;
+		}
+
+		.container-contact {
+			padding: 90px 60px 60px 60px;
+		}
+
+		.container-contact section.contact {
+			padding: 70px 40px;
+		}
+
+		.container-contact section.contact .text {
+			width: 60%;
+		}
+
+		.container-contact section.contact .text h1.name {
+			font-size: 28px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 13px;
+			line-height: 20px;
+		}
+
+		.container-contact section.contact .image {
+			width: 40%;
+		}
+
+		.container-contact section.contact-form {
+			padding: 70px 120px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 28px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			width: 125px;
+			font-size: 25px;
+		}
+
+		.container-contact section.contact-form form input[type="text"],
+		.container-contact section.contact-form form textarea,
+		.container-contact section.contact-form form label {
+			font-size: 17px;
+		}
+
+		.container-contact section.contact-form form input[type="text"] {
+			height: 40px;
+		}
+
+		.container-contact section.contact-form form span {
+			font-size: 14px;
+		}
+
+		footer {
+			height: 50px;
+			padding: 0 40px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 12px;
+		}
+	}
+
+	@media (max-width: 1024px) and (min-width: 0) {
+		header,
+		footer {
+			padding: 0 40px;
+		}
+
+		section.header-image {
+			height: 500px;
+		}
+
+		section.header-image article.presentation {
+			width: 65%;
+		}
+
+		.container section.categories {
+			padding: 60px 30px;
+		}
+
+		.container section.categories article {
+			padding: 50px 25px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 25px;
+		}
+
+		.container section.categories article .text p {
+			font-size: 13px;
+			line-height: 20px;
+		}
+
+		section.video .group-video h2 {
+			font-size: 28px;
+		}
+
+		section.video .group-video p {
+			margin-left: 0;
+			font-size: 14px;
+			line-height: 20px;
+		}
+
+		section.quote {
+			padding: 125px 0;
+		}
+
+		section.quote p {
+			font-size: 30px;
+		}
+
+		footer {
+			height: 50px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 20px 15px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 252px;
+		}
+
+		body.portfolio .portfolio .container-images .image img {
+			padding: 3px;
+		}
+
+		.container-contact {
+			padding: 90px 40px 40px 40px;
+		}
+
+		.container-contact section.contact {
+			padding: 50px 25px;
+		}
+
+		.container-contact section.contact .text {
+			padding-right: 50px;
+		}
+
+		.container-contact section.contact .text h1.name {
+			font-size: 24px;
+		}
+
+		.container-contact section.contact .text br:first-of-type {
+			display: none;
+		}
+
+		.container-contact section.contact .text a {
+			margin-bottom: 7px;
+			font-size: 13px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 50px 80px 50px 80px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 24px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			width: 110px;
+			font-size: 22px;
+		}
+	}
+
+	@media (max-width: 900px) and (min-width: 0) {
+		header {
+			height: 50px;
+			padding: 0 30px;
+		}
+
+		.container-contact {
+			padding: 80px 30px 30px 30px;
+		}
+
+		.container-contact section.contact {
+			padding: 40px 30px;
+		}
+
+		.container-contact section.contact .text {
+			padding-right: 30px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		.container-contact section.contact .text br:last-of-type {
+			display: none;
+		}
+
+		.container-contact section.contact .text a {
+			font-size: 12px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 60px 100px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			width: 115px;
+			font-size: 23px;
+		}
+
+		.container-contact section.contact-form form input[type="text"],
+		.container-contact section.contact-form form textarea {
+			padding: 0 40px;
+		}
+
+		.container-contact section.contact-form form span {
+			margin-left: 37px;
+		}
+
+		section.header-image {
+			padding: 0 50px;
+			height: 450px;
+		}
+
+		section.header-image article.presentation {
+			width: 70%;
+		}
+
+		section.header-image article.presentation p.ciao {
+			font-size: 25px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 25px;
+		}
+
+		section.header-image article.presentation h2 {
+			line-height: 26px;
+			font-size: 13px;
+		}
+
+		section.header-image article.presentation p.info {
+			line-height: 18px;
+			font-size: 12px;
+		}
+
+		.container section.categories article {
+			padding: 35px 15px;
+		}
+
+		.container section.categories article .text {
+			padding-left: 15px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 22px;
+		}
+
+		.container section.categories article .text p {
+			margin-top: 10px;
+			font-size: 12px;
+			line-height: 18px;
+		}
+
+		.container section.categories article.ritratti .text p {
+			padding: 0 80px;
+		}
+
+		section.video .group-video {
+			width: 100%;
+			left: 0;
+			padding: 50px;
+		}
+
+		section.video .group-video h2 {
+			font-size: 26px;
+		}
+
+		section.video .group-video p {
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		section.quote {
+			padding: 125px 0;
+		}
+
+		section.quote p {
+			font-size: 26px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu {
+			padding: 5px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu a {
+			padding: 0 12px;
+			font-size: 12px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 10px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 220px;
+		}
+
+		body.portfolio .portfolio .container-images .image img {
+			padding: 2px;
+		}
+
+		footer {
+			padding: 0 30px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 11px;
+		}
+	}
+
+	@media (max-width: 768px) and (min-width: 0) {
+		header label {
+			display: block;
+			z-index: 100;
+			cursor: pointer;
+		}
+
+		header nav.menu {
+			position: absolute;
+			width: 100%;
+			height: 50px;
+			padding: 0 40px;
+			top: 0;
+			left: 0;
+			-webkit-transform: translateY(-60px);
+			-ms-transform: translateY(-60px);
+			transform: translateY(-60px);
+			-webkit-transition: all 0.5s;
+			-o-transition: all 0.5s;
+			transition: all 0.5s;
+		}
+
+		header nav.menu a {
+			margin: 0;
+			margin-right: 20px;
+			color: #888;
+			line-height: 23px;
+		}
+
+		header nav.menu ul.social li {
+			margin: 0;
+			margin-right: 20px;
+		}
+
+		header input[type="checkbox"]:checked ~ nav.menu {
+			background-color: white;
+			-webkit-transform: translateY(0px);
+			-ms-transform: translateY(0px);
+			transform: translateY(0px);
+		}
+
+		header input[type="checkbox"]:checked ~ nav.menu {
+			background-color: black;
+		}
+
+		.container {
+			padding: 0;
+		}
+
+		.container section.categories article {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-flow: column wrap;
+			flex-flow: column wrap;
+			padding: 40px 25px;
+		}
+
+		.container section.categories article .text {
+			padding: 0;
+			width: 100%;
+			margin-top: 15px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 28px;
+		}
+
+		.container section.categories article .text p {
+			font-size: 16px;
+			line-height: 22px;
+		}
+
+		.container section.categories article .image {
+			width: 100%;
+		}
+
+		.container section.categories article.ritratti {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: reverse;
+			-ms-flex-flow: column-reverse;
+			flex-flow: column-reverse;
+		}
+
+		section.video video {
+			width: 150%;
+		}
+
+		section.video .group-video h2 {
+			font-size: 28px;
+		}
+
+		section.video .group-video p {
+			width: 100%;
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		section.quote {
+			padding: 80px 0;
+		}
+
+		section.quote p {
+			text-align: left;
+			padding: 10px 20px;
+			font-size: 50px;
+		}
+
+		section.quote p.author {
+			padding: 0;
+			padding-top: 40px;
+			text-align: right;
+		}
+
+		section.header-image {
+			height: 500px;
+			padding: 0 50px;
+		}
+
+		section.header-image article.presentation {
+			width: 70%;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 20px;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			width: 400px;
+		}
+
+		.container-contact section.contact {
+			padding: 40px;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-flow: column;
+			flex-flow: column;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+
+		.container-contact section.contact .text {
+			-webkit-box-ordinal-group: 2;
+			-ms-flex-order: 1;
+			order: 1;
+			padding-right: 0;
+			margin-top: 30px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 14px;
+			line-height: 23px;
+			padding-right: 0;
+		}
+
+		.container-contact section.contact .image,
+		.container-contact section.contact .text {
+			width: 100%;
+		}
+
+		.container-contact section.contact .image {
+			-webkit-box-ordinal-group: 1;
+			-ms-flex-order: 0;
+			order: 0;
+		}
+
+		.container-contact section.contact-form {
+			padding: 55px;
+		}
+
+		footer {
+			height: 50px;
+		}
+	}
+
+	@media (max-width: 600px) and (min-width: 0) {
+		header {
+			padding: 0 20px;
+		}
+
+		header nav.menu {
+			padding: 0 20px;
+		}
+
+		section.header-image {
+			height: 310px;
+			padding: 0 40px;
+		}
+
+		section.header-image article.presentation {
+			width: 75%;
+		}
+
+		section.header-image article.presentation p.ciao {
+			margin-top: 40px;
+			font-size: 27px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 24px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 12px;
+			line-height: 24px;
+		}
+
+		section.header-image article.presentation p.info {
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		.container section.categories {
+			padding: 40px 20px;
+		}
+
+		.container section.categories article,
+		.container section.categories article.ritratti {
+			padding: 20px 10px;
+		}
+
+		.container section.categories article .text,
+		.container section.categories article.ritratti .text {
+			padding: 0 20px;
+		}
+
+		.container section.categories article .text h2,
+		.container section.categories article.ritratti .text h2 {
+			padding: 0;
+		}
+
+		.container section.categories article .text p,
+		.container section.categories article.ritratti .text p {
+			padding: 0 20px;
+			font-size: 14px;
+			line-height: 21px;
+		}
+
+		section.video .group-video {
+			width: 100%;
+			left: 0;
+			padding: 0 20px;
+		}
+
+		section.video .group-video p {
+			width: 90%;
+			line-height: 15px;
+		}
+
+		section.video .group-video p:last-of-type {
+			display: block;
+		}
+
+		section.video .group-video p:first-of-type {
+			display: none;
+		}
+
+		section.quote p {
+			font-size: 40px;
+			border-left: 5px solid #888;
+		}
+
+		body.portfolio .portfolio {
+			padding: 70px 20px 20px 20px;
+		}
+
+		body.portfolio .portfolio .container-images {
+			padding: 24px 0;
+		}
+
+		body.portfolio .portfolio .container-images .image {
+			padding: 2px 10px;
+		}
+
+		body.portfolio .portfolio .container-images .image img {
+			padding: 0;
+		}
+
+		.container-contact {
+			padding: 70px 20px 20px 20px;
+		}
+
+		.container-contact section.contact {
+			padding: 25px;
+		}
+
+		.container-contact section.contact-form {
+			padding: 40px 30px;
+		}
+
+		.container-contact section.contact-form form input[type="text"],
+		.container-contact section.contact-form form textarea {
+			font-size: 15px;
+			padding: 0 20px;
+			margin-bottom: 10px;
+			height: 35px;
+		}
+
+		.container-contact section.contact-form form span {
+			font-size: 13px;
+			margin-left: 18px;
+		}
+
+		.container-contact section.contact-form form textarea {
+			height: 130px;
+		}
+
+		.container-contact section.contact-form form input[type="submit"] {
+			height: 50px;
+		}
+
+		footer {
+			padding: 0 20px;
+		}
+
+		footer .info p.copy,
+		footer .info p.developed,
+		footer .info p.developed a {
+			font-size: 10px;
+		}
+	}
+
+	@media (max-width: 480px) and (min-width: 0) {
+		header {
+			height: 45px;
+		}
+
+		header nav.name a {
+			font-size: 30px;
+		}
+
+		header nav.menu {
+			height: 45px;
+		}
+
+		header nav.menu a {
+			font-size: 13px;
+		}
+
+		header nav.menu ul.social li svg {
+			width: 23px;
+			height: 23px;
+		}
+
+		section.header-image {
+			height: 300px;
+		}
+
+		section.header-image article.presentation p.ciao,
+		section.header-image article.presentation h1.name {
+			font-size: 23px;
+		}
+
+		section.video video {
+			width: 200%;
+		}
+
+		section.video .group-video h2 {
+			font-size: 24px;
+			margin-bottom: 11px;
+		}
+
+		section.video .group-video p {
+			font-size: 12px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 26px;
+		}
+
+		.container section.categories article .text p {
+			font-size: 12px;
+			line-height: 19px;
+		}
+
+		section.quote p {
+			border-left: 5px solid;
+			font-size: 35px;
+		}
+	}
+
+	@media (max-width: 420px) and (min-width: 0) {
+		header {
+			padding: 0 10px;
+		}
+
+		header nav.menu a {
+			font-size: 11px;
+		}
+
+		header nav.menu ul.social {
+			display: none;
+		}
+
+		section.header-image {
+			height: 250px;
+			padding: 0 20px;
+		}
+
+		section.header-image article.presentation {
+			width: 80%;
+		}
+
+		section.header-image article.presentation p.ciao {
+			margin-top: 40px;
+			font-size: 22px;
+		}
+
+		section.header-image article.presentation h1.name {
+			font-size: 20px;
+		}
+
+		section.header-image article.presentation h2 {
+			font-size: 10px;
+			line-height: 14px;
+		}
+
+		section.header-image article.presentation p.info {
+			font-size: 10px;
+			line-height: 14px;
+		}
+
+		.container section.categories {
+			padding: 25px 10px;
+		}
+
+		.container section.categories article .text h2 {
+			font-size: 24px;
+		}
+
+		section.quote {
+			padding: 60px 0;
+		}
+
+		section.quote p {
+			width: 90%;
+			border-left: 4px solid;
+		}
+
+		body.portfolio .portfolio {
+			padding: 60px 10px 10px 10px;
+		}
+
+		body.portfolio .portfolio .portfolio-menu {
+			text-align: center;
+			width: 100%;
+		}
+
+		.container-contact {
+			padding: 60px 10px 10px 10px;
+		}
+
+		.container-contact section.contact {
+			padding: 15px;
+		}
+
+		.container-contact section.contact .text {
+			padding-right: 0px;
+		}
+
+		.container-contact section.contact .text a {
+			font-size: 13px;
+		}
+
+		.container-contact section.contact .text p {
+			font-size: 12px;
+			line-height: 19px;
+			padding-right: 0px;
+		}
+
+		.container-contact section.contact-form form h2 {
+			font-size: 22px;
+			margin-bottom: 30px;
+		}
+
+		footer {
+			padding: 0 10px;
+		}
 	}
 </style>

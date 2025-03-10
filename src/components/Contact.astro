@@ -1,0 +1,138 @@
+---
+import daniel from "../assets/contact/dan-patino-fotografia-contatti.jpg";
+import { Form } from "./Form";
+---
+
+<div class="container-contact">
+    <section class="contact">
+        <div class="text">
+            <h1 class="name">Daniel Pati&ntilde;o</h1>
+            <hr />
+            <p class="info">
+                Fotógrafo venezolano basado en Madrid desde hace 3 años. Mi
+                primer contacto con la fotografía fue al comprar una cámara
+                compact. Sin saberlo en ese momento, aquel pequeño objeto
+                marcaría el inicio de un camino que cambiaría mi vida.
+            </p>
+            <p class="info">
+                Buscando nuevas oportunidades, me mudé a México con la intención
+                de construir un mejor futuro. Pero, además de encontrar un nuevo
+                hogar, descubrí mi verdadera pasión: la fotografía. Lo que
+                comenzó como un simple pasatiempo pronto se convirtió en algo
+                más. Con meses de estudio y práctica, mi interés creció hasta
+                volverse una profesión. Poco a poco, llegaron mis primeras
+                colaboraciones y empecé a realizar sesiones fotográficas en
+                bodas, moda, retratos y naturaleza muerta. Durante este tiempo,
+                también tomé mis primeros cursos de fotografía estenopeica y
+                básica, perfeccionando mi técnica.
+            </p>
+            <p class="info">
+                Durante dos años trabajé entre Playa del Carmen y Guadalajara,
+                explorando distintas facetas de la fotografía y adquiriendo
+                experiencia. Más tarde, viví cuatro años en Nápoles, donde
+                continué desarrollando mi carrera como fotógrafo freelance.
+            </p>
+            <p class="info">
+                Hoy, desde Madrid, sigo cultivando mi pasión por la fotografía,
+                una pasión que no deja de crecer y evolucionar con cada nueva
+                experiencia y aprendizaje.
+            </p>
+
+            <br /><br />
+            <a class="email" href="mailto:dan@danpatinofotografia.com"
+                >dan@danpatinofotografia.com</a
+            >
+            <a class="tel" href="tel:3317420049">+39 331 742 0049</a>
+            <a class="facebook" href="tel:3317420049">Facebook</a>
+            <a class="instagram" href="tel:3317420049">Instagram</a>
+        </div>
+        <div class="image">
+            <img src={daniel.src} />
+        </div>
+    </section>
+    <section class="contact-form">
+        <Form client:load />
+    </section>
+</div>
+
+<style>
+    .container-contact {
+        width: 100%;
+        background-color: #efefef;
+        padding: 160px 100px;
+    }
+
+    .container-contact section.contact {
+        padding: 100px 60px;
+        background-color: white;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .container-contact section.contact .text {
+        width: 50%;
+        padding-right: 60px;
+    }
+
+    .container-contact section.contact .text h1.name {
+        font-size: 40px;
+        color: #888;
+        font-family: MontserratB;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    .container-contact section.contact .text hr {
+        width: 70px;
+        color: #444;
+        background-color: #888;
+        border: 1px solid #888;
+        margin-bottom: 15px;
+        margin-left: 0;
+    }
+
+    .container-contact section.contact .text p {
+        font-size: 14px;
+        margin-bottom: 18px;
+        line-height: 22px;
+    }
+
+    .container-contact section.contact .text a {
+        display: block;
+        font-size: 14px;
+        text-decoration: none;
+        color: #888;
+        font-weight: bold;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        margin-bottom: 5px;
+    }
+
+    .container-contact section.contact .text a:hover {
+        color: #444;
+    }
+
+    .container-contact section.contact .image {
+        width: 50%;
+    }
+
+    .container-contact section.contact .image img {
+        width: 100%;
+    }
+
+    .container-contact section.contact-form {
+        padding: 120px 200px;
+        background-color: #ccc;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+</style>

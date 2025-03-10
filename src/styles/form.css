@@ -1,0 +1,84 @@
+form {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    position: relative;
+}
+
+form h2 {
+    font-size: 42px;
+    font-family: MontserratB;
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    margin-bottom: 20px;
+    font-family: "Montserrat";
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #efefef;
+    height: 30px;
+    padding: 0 20px;
+    color: white;
+    font-size: 13px;
+    width: 100%;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #fafafa;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #aaa;
+    outline: none;
+}
+
+form textarea {
+    padding: 20px;
+    resize: none;
+    height: 120px;
+    outline: none;
+    overflow-y: auto;
+}
+
+form button {
+    border: none;
+    height: 40px;
+    width: 140px;
+    font-size: 30px;
+    outline: none;
+    font-family: "MontserratB";
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.1s;
+    transform: translateY(-3px);
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+form button:hover {
+    color: #efefef;
+}
+
+form button[type="submit"]:active {
+    transform: translateY(0px);
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.container-contact section.contact-form form button::-moz-focus-inner {
+    border: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}

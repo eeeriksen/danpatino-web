@@ -1,0 +1,172 @@
+<header class="ini-header">
+    <nav class="name">
+        <a href="/">Dan Pati&ntilde;o</a>
+    </nav>
+    <label for="menu">
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </label>
+    <input type="checkbox" name="menu" id="menu" />
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/portafolio">Portafolio</a>
+        <a href="/contacto">Contacto</a>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var lastScroll = 0;
+        var header = document.querySelector("header");
+        var isHome = location.pathname === "/";
+        var firstSection = document.querySelector("section:first-of-type");
+
+        if (
+            (firstSection && window.scrollY > firstSection.clientHeight) ||
+            !isHome
+        ) {
+            header?.classList.add("white");
+        }
+
+        function handleScroll() {
+            var currentScroll = window.scrollY;
+
+            if (currentScroll > lastScroll) {
+                header?.classList.add("hide");
+            } else {
+                header?.classList.remove("hide");
+            }
+            lastScroll = currentScroll;
+
+            if (isHome && firstSection) {
+                var firstSectionHeight = firstSection.clientHeight;
+                if (currentScroll < firstSectionHeight) {
+                    header?.classList.add("black");
+                    header?.classList.remove("white");
+                } else {
+                    header?.classList.remove("black");
+                    header?.classList.add("white");
+                }
+            } else {
+                header?.classList.add("white");
+                header?.classList.remove("black");
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+    });
+</script>
+
+<style>
+    header {
+        height: 60px;
+        background-color: white;
+        padding: 0 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        position: fixed;
+        transition: all 0.4s;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #888;
+        line-height: 22px;
+        transition: all 0.3s;
+    }
+
+    header a:hover {
+        color: #bbb;
+    }
+
+    header nav.name {
+        margin-top: 4px;
+    }
+
+    header nav.name a {
+        font-size: 36px;
+        font-family: Philosopher;
+    }
+
+    header label {
+        display: none;
+    }
+
+    header label .bars {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    header label .bars .bar {
+        background-color: #888;
+        width: 25px;
+        margin: 2px 0;
+        height: 3px;
+        border-radius: 5px;
+    }
+
+    header input {
+        display: none;
+    }
+
+    header nav.menu {
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: all 0.4s;
+    }
+
+    header nav.menu a {
+        margin-left: 35px;
+        font-size: 15px;
+        font-family: MontserratB;
+        text-transform: uppercase;
+    }
+
+    header.ini-header {
+        background-color: transparent;
+    }
+
+    header.ini-header a.menu {
+        color: #bbb;
+    }
+
+    header.ini-header svg:hover path {
+        fill: black;
+    }
+
+    header.ini-header.white {
+        background-color: white;
+        box-shadow: 0 0 11px 2.5px rgba(0, 0, 0, 0.1);
+    }
+
+    header.ini-header.white svg:hover path {
+        fill: white;
+    }
+
+    header.ini-header.black {
+        background-color: black;
+    }
+
+    header.ini-header nav.menu.black {
+        background-color: black;
+    }
+
+    header.ini-header nav.menu.white {
+        background-color: white;
+    }
+
+    header#all-header.hide,
+    header.ini-header.hide {
+        transform: translateY(-70px);
+    }
+</style>

@@ -1,0 +1,76 @@
+---
+import Vid from "../assets/videos/dan-patino-fotografia-video-matrimonio.mp4";
+import Image from "../assets/home/dan-patino-fotografia-video-matrimonio.jpg";
+---
+
+<section class="video">
+    <video
+        src={Vid}
+        loop="loop"
+        muted="muted"
+        autoplay="autoplay"
+        playsinline=""
+        poster={Image.src}
+        class="video-bg"
+    >
+    </video>
+    <div class="group-video">
+        <h2>Produzione audiovisiva</h2>
+        <p>
+            Video di matrimonio ed eventi. E&apos; un vero e proprio film, il
+            nostro approccio &egrave; quello del documentario dinamico. Le
+            migliore riprese del vostro momento indimenticabile.
+        </p>
+        <br />
+        <p>
+            Video corporativo, backstage e look book per promuovere il tuo
+            marchio. Avrai la possibilit&agrave; di avere short version e long
+            version del tuo spot cos&igrave; da utilizzarli in ogni situazione,
+            dalla diffusione televisiva alla condivisione web.
+        </p>
+        <p>
+            Video di matrimonio ed eventi. E un vero e proprio film, il nostro
+            approccio &egrave; quello del documentario dinamico.
+        </p>
+    </div>
+</section>
+
+<style>
+    .video {
+        position: relative;
+        width: 100%;
+        background-color: #efefef;
+    }
+
+    .video video {
+        width: 100%;
+        filter: grayscale(100%) brightness(50%);
+    }
+
+    .video .group-video {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 60px;
+        transform: translateY(-50%);
+    }
+
+    .video .group-video h2 {
+        color: white;
+        font-size: 45px;
+        font-family: MontserratB;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    .video .group-video p {
+        width: 60%;
+        color: white;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .video .group-video p:last-of-type {
+        display: none;
+    }
+</style>

@@ -1,0 +1,42 @@
+<footer>
+    <div class="info">
+        <p class="copy">&copy; 2025 Daniel Pati&ntilde;o</p>
+        <p class="developed">
+            Developed by <a href="https://eriksend.com">Eriksen Lezama</a>
+        </p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        height: 50px;
+        padding: 0 60px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    footer .info p.copy,
+    footer .info p.developed {
+        color: #444;
+        font-size: 12px;
+    }
+
+    footer .info p.developed a {
+        text-decoration: none;
+        color: #888;
+        font-size: 12px;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    footer .info p.developed a:hover {
+        color: #444;
+    }
+</style>
