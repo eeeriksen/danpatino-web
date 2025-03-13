@@ -1,119 +1,74 @@
-<section class="header-image">
-    <article class="presentation">
-        <p class="ciao">
-            Hola
-            <h1 class="name">Soy Daniel Pati&ntilde;o</h1>
-            <h2 class="photographer">Fotografo Profesional</h2>
-            <p class="info">
-                Destacada creatividad en el ámbito artístico y profesional. Doy
-                lo mejor de mí en cualquier trabajo fotográfico, desde books y
-                composits para modelos hasta sesiones de still life y fotografía
-                familiar.
-            </p>
+---
+import { Image } from "astro:assets";
+import Dan from "../assets/home/daniel-patino-hero-mobile.jpeg";
+---
+
+<section id="inicio">
+    <div class="text">
+        <h1 class="name">Daniel Patiño</h1>
+        <p class="role">Fotógrafo Profesional</p>
+        <p class="description">
+            Capturando emociones y momentos inolvidables con un enfoque
+            artístico y profesional, transformando cada imagen en una historia
+            que perdura en el tiempo.
         </p>
-    </article>
-
-    <style>
-        section.header-image {
-            background: url("../assets/home/home-largo.jpg");
-            background-color: #000;
-            background-position: top 40px right -50px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            height: 750px;
-            display: flex;
-            align-items: center;
-            padding: 0 60px;
-        }
-
-        section.header-image article.presentation {
-            width: 50%;
-        }
-
-        section.header-image article.presentation p.ciao {
-            color: white;
-            font-size: 60px;
-            font-family: MontserratB;
-        }
-
-        section.header-image article.presentation h1 {
-            font-size: 40px;
-            font-family: Philosopher;
-            color: #bbb;
-            margin: 0;
-        }
-
-        section.header-image article.presentation h2 {
-            font-size: 20px;
-            text-transform: uppercase;
-            font-family: MontserratB;
-            padding: 0 4px;
-            display: inline;
-            line-height: 40px;
-            background-color: #bbb;
-            color: #222;
-        }
-
-        section.header-image article.presentation p.info {
-            margin-top: 5px;
-            line-height: 30px;
-            font-size: 17px;
-            color: #bbb;
-        }
-
-        /* MEDIA QUERIES :S */
-        /* @media (max-width: 5000px) and (min-width: 0) {
-        section.header-image {
-            padding: 0 250px;
-            height: 1500px;
-        }
-
-        section.header-image article.presentation {
-            width: 50%;
-        }
-
-        section.header-image article.presentation p.ciao {
-            font-size: 70px;
-        }
-
-        section.header-image article.presentation h1.name {
-            font-size: 80px;
-        }
-
-        section.header-image article.presentation h2 {
-            font-size: 41px;
-            line-height: 80px;
-        }
-
-        section.header-image article.presentation p.info {
-            line-height: 65px;
-            font-size: 45px;
-        }
-    }
-    @media (max-width: 2880px) and (min-width: 0) {
-        section.header-image {
-            padding: 0 150px;
-            height: 1200px;
-        }
-
-        section.header-image article.presentation p.ciao {
-            font-size: 60px;
-        }
-
-        section.header-image article.presentation h1.name {
-            font-size: 60px;
-        }
-
-        section.header-image article.presentation h2 {
-            font-size: 30px;
-            line-height: 60px;
-        }
-
-        section.header-image article.presentation p.info {
-            line-height: 50px;
-            font-size: 35px;
-        }
-    } */
-    </style>
+    </div>
+    <Image src={Dan} alt="Daniel Patiño" />
 </section>
+
+<style>
+    section {
+        background-color: #000;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 140px 16px 0;
+        position: relative;
+    }
+
+    section::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 80%);
+    }
+
+    .text {
+        margin-bottom: 50px;
+    }
+
+    span {
+        width: 50px;
+        height: 20px;
+        background-color: #e96862;
+    }
+
+    p.role {
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: 1.45vw;
+        white-space: nowrap;
+        text-transform: uppercase;
+        background-color: #c14a4a;
+        padding: 2px 4px;
+        width: fit-content;
+        margin-bottom: 16px;
+    }
+
+    p.description {
+        line-height: 22px;
+        font-size: 16px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>

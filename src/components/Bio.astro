@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import daniel from "../assets/contact/dan-patino-fotografia-contatti.jpg";
+---
+
+<section id="bio">
+    <div class="image">
+        <Image src={daniel} alt="Daniel Patiño" />
+    </div>
+    <div class="text">
+        <h2 class="name">Biografía</h2>
+        <hr />
+        <p class="info">
+            Fotógrafo venezolano basado en Madrid desde hace 3 años. Mi primer
+            contacto con la fotografía fue al comprar una cámara compact. Sin
+            saberlo en ese momento, aquel pequeño objeto marcaría el inicio de
+            un camino que cambiaría mi vida.
+        </p>
+        <p class="info">
+            Buscando nuevas oportunidades, me mudé a México con la intención de
+            construir un mejor futuro. Pero, además de encontrar un nuevo hogar,
+            descubrí mi verdadera pasión: la fotografía. Lo que comenzó como un
+            simple pasatiempo pronto se convirtió en algo más. Con meses de
+            estudio y práctica, mi interés creció hasta volverse una profesión.
+            Poco a poco, llegaron mis primeras colaboraciones y empecé a
+            realizar sesiones fotográficas en bodas, moda, retratos y naturaleza
+            muerta. Durante este tiempo, también tomé mis primeros cursos de
+            fotografía estenopeica y básica, perfeccionando mi técnica.
+        </p>
+        <p class="info">
+            Durante dos años trabajé entre Playa del Carmen y Guadalajara,
+            explorando distintas facetas de la fotografía y adquiriendo
+            experiencia. Más tarde, viví cuatro años en Nápoles, donde continué
+            desarrollando mi carrera como fotógrafo freelance.
+        </p>
+        <p class="info">
+            Hoy, desde Madrid, sigo cultivando mi pasión por la fotografía, una
+            pasión que no deja de crecer y evolucionar con cada nueva
+            experiencia y aprendizaje.
+        </p>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 120px 16px 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    p {
+        margin-bottom: 16px;
+    }
+</style>

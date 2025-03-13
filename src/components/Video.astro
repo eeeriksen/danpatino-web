@@ -1,53 +1,58 @@
 ---
 import Vid from "../assets/videos/dan-patino-fotografia-video-matrimonio.mp4";
-import Image from "../assets/home/dan-patino-fotografia-video-matrimonio.jpg";
 ---
 
-<section class="video">
+<section>
+    <div>
+        <h2>Producción Audiovisual</h2>
+        <hr />
+        <p>
+            Capturamos momentos inolvidables con un enfoque cinematográfico y
+            dinámico. Realizamos videos de bodas, eventos, producciones
+            corporativas, backstage y lookbooks para potenciar tu marca.
+            Adaptamos cada proyecto para televisión y plataformas digitales,
+            asegurando impacto en cualquier escenario.
+        </p>
+    </div>
     <video
         src={Vid}
         loop="loop"
         muted="muted"
         autoplay="autoplay"
         playsinline=""
-        poster={Image.src}
         class="video-bg"
     >
     </video>
-    <div class="group-video">
-        <h2>Produzione audiovisiva</h2>
-        <p>
-            Video di matrimonio ed eventi. E&apos; un vero e proprio film, il
-            nostro approccio &egrave; quello del documentario dinamico. Le
-            migliore riprese del vostro momento indimenticabile.
-        </p>
-        <br />
-        <p>
-            Video corporativo, backstage e look book per promuovere il tuo
-            marchio. Avrai la possibilit&agrave; di avere short version e long
-            version del tuo spot cos&igrave; da utilizzarli in ogni situazione,
-            dalla diffusione televisiva alla condivisione web.
-        </p>
-        <p>
-            Video di matrimonio ed eventi. E un vero e proprio film, il nostro
-            approccio &egrave; quello del documentario dinamico.
-        </p>
-    </div>
 </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector(".video-bg") as HTMLVideoElement;
+        if (video) {
+            video.currentTime = 7;
+        }
+    });
+</script>
+
 <style>
-    .video {
-        position: relative;
+    section {
         width: 100%;
-        background-color: #efefef;
+        display: flex;
+        flex-direction: column;
+        padding: 120px 16px 0;
     }
 
-    .video video {
+    p {
+        margin-bottom: 16px;
+    }
+
+    video {
         width: 100%;
         filter: grayscale(100%) brightness(50%);
+        background-color: #000;
     }
 
-    .video .group-video {
+    section .group-video {
         width: 90%;
         position: absolute;
         top: 50%;
@@ -55,22 +60,21 @@ import Image from "../assets/home/dan-patino-fotografia-video-matrimonio.jpg";
         transform: translateY(-50%);
     }
 
-    .video .group-video h2 {
+    section .group-video h2 {
         color: white;
         font-size: 45px;
-        font-family: MontserratB;
         margin-bottom: 15px;
         margin-top: 0;
     }
 
-    .video .group-video p {
+    section .group-video p {
         width: 60%;
         color: white;
         font-size: 16px;
         line-height: 25px;
     }
 
-    .video .group-video p:last-of-type {
+    section .group-video p:last-of-type {
         display: none;
     }
 </style>

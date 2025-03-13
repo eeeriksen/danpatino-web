@@ -37,8 +37,6 @@ export function Form() {
 
     return (
         <form id="contact-form" onSubmit={handleSubmit}>
-
-            <h2>Contáctame</h2>
             <input
                 required
                 placeholder='Nombre'
@@ -63,17 +61,8 @@ export function Form() {
             ></textarea>
             <button disabled={loading} type='submit'>Enviar</button>
 
-            {(error || success) && (
-                <div className='result-container'>
-                    {(!error && !loading && success) ? (
-                        <>
-                            <p>¡Gracias por tu mensaje! Te contactaré pronto.</p>
-                        </>
-                    ) : (
-                        error && <div>Ocurrió un error, intenta de nuevo recargando la página.</div>
-                    )}
-                </div>
-            )}
+            {error && <p className='success'>¡Gracias por tu mensaje! Te contactaré pronto.</p>}
+            {success && <p className='error'>Ocurrió un error, intenta de nuevo recargando la página.</p>}
         </form>
     );
 }

@@ -1,0 +1,86 @@
+---
+import Retratos from "../assets/icons/portrait.png";
+import Moda from "../assets/icons/magazine.png";
+import Bodas from "../assets/icons/hall.png";
+import Corporativa from "../assets/icons/briefcase.png";
+import CorporativaIcon from "../icons/CorporativaIcon.astro";
+---
+
+<section id="servicios">
+    <div class="intro">
+        <h2>Servicios</h2>
+        <hr />
+        <p>
+            Ofrezco fotografía de retratos, moda, bodas y corporativa, creando
+            imágenes que reflejan autenticidad, estilo y profesionalismo
+        </p>
+    </div>
+    <div class="services">
+        <div title="Retratos">
+            <img src={Retratos.src} alt="Retratos" />
+            <h3>Retratos</h3>
+            <p>
+                Sesiones fotográficas profesionales que reflejan tu esencia y
+                personalidad con un estilo natural y auténtico.
+            </p>
+        </div>
+        <div title="Moda">
+            <img src={Moda.src} alt="Moda" />
+            <h3>Moda</h3>
+            <p>
+                Imágenes impactantes para modelos y marcas que transmiten estilo
+                y creatividad.
+            </p>
+        </div>
+        <div title="Bodas">
+            <img src={Bodas.src} alt="Bodas" />
+            <h3>Bodas</h3>
+            <p>
+                Capturo cada emoción y detalle de tu día especial para que tus
+                recuerdos duren toda la vida.
+            </p>
+        </div>
+        <div title="Corporativa">
+            <img src={Corporativa.src} alt="Corporativa" />
+            <h3>Corporativa</h3>
+            <p>
+                Retratos y contenido visual que refuerzan la identidad y
+                profesionalismo de tu empresa.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        padding: 120px 16px 0;
+    }
+
+    .intro {
+        margin-bottom: 50px;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .services div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 70px;
+        height: auto;
+        filter: invert(1);
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+</style>
