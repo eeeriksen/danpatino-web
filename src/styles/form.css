@@ -44,3 +44,12 @@ button {
 button:hover {
     background-color: #e98b86;
 }
+
+@media (width >=1024px) {
+
+    input,
+    textarea,
+    button {
+        font-size: 18px;
+    }
+}

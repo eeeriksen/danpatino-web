@@ -40,6 +40,8 @@ import Vid from "../assets/videos/dan-patino-fotografia-video-matrimonio.mp4";
         display: flex;
         flex-direction: column;
         padding: 120px 16px 0;
+        max-width: 1280px;
+        margin: auto;
     }
 
     p {
@@ -76,5 +78,11 @@ import Vid from "../assets/videos/dan-patino-fotografia-video-matrimonio.mp4";
 
     section .group-video p:last-of-type {
         display: none;
+    }
+
+    @media (width >= 1024px) {
+        section {
+            padding: 120px 32px 0;
+        }
     }
 </style>

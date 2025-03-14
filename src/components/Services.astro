@@ -42,7 +42,7 @@ import CorporativaIcon from "../icons/CorporativaIcon.astro";
         </div>
         <div title="Corporativa">
             <img src={Corporativa.src} alt="Corporativa" />
-            <h3>Corporativa</h3>
+            <h3>Corporativo</h3>
             <p>
                 Retratos y contenido visual que refuerzan la identidad y
                 profesionalismo de tu empresa.
@@ -56,6 +56,8 @@ import CorporativaIcon from "../icons/CorporativaIcon.astro";
         display: flex;
         flex-direction: column;
         padding: 120px 16px 0;
+        max-width: 1280px;
+        margin: auto;
     }
 
     .intro {
@@ -65,7 +67,7 @@ import CorporativaIcon from "../icons/CorporativaIcon.astro";
     .services {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 32px;
     }
 
     .services div {
@@ -82,5 +84,15 @@ import CorporativaIcon from "../icons/CorporativaIcon.astro";
 
     h3 {
         margin-bottom: 10px;
+    }
+
+    @media (width >= 1024px) {
+        section {
+            padding: 120px 32px 0;
+        }
+
+        .services {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 </style>

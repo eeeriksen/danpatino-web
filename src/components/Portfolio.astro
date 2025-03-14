@@ -26,6 +26,8 @@
         display: flex;
         flex-direction: column;
         padding: 120px 16px 0;
+        max-width: 1280px;
+        margin: auto;
     }
 
     .text {
@@ -82,5 +84,21 @@
         grid-row: span 2 / span 2;
         grid-row-start: 3;
         background-image: url("../assets/moda/dan-patino-fotografia-moda-portfolio-1.jpg");
+    }
+
+    @media (width >= 768px) {
+        .parent {
+            gap: 16px;
+        }
+    }
+
+    @media (width >= 1024px) {
+        section {
+            padding: 120px 32px 0;
+        }
+
+        .parent {
+            gap: 32px;
+        }
     }
 </style>

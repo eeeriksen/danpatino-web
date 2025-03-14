@@ -10,23 +10,43 @@ import { Form } from "./Form";
             ¿Listo para capturar momentos inolvidables? Contáctame y hagamos
             realidad tu próxima sesión.
         </p>
+        <div class="links">
+            <a class="email" href="mailto:dan@danpatinofotografia.com">
+                dan@danpatinofotografia.com
+            </a>
+            <a class="tel" href="tel:34625768175">+34 625 76 81 75</a>
+            <a
+                class="facebook"
+                target="_blank"
+                href="https://www.facebook.com/dan.marley1">Facebook</a
+            >
+            <a
+                class="instagram"
+                target="_blank"
+                href="https://www.instagram.com/danpatinofotografia/"
+                >Instagram</a
+            >
+        </div>
     </div>
     <div class="form">
         <Form />
-        <a class="email" href="mailto:dan@danpatinofotografia.com">
-            dan@danpatinofotografia.com
-        </a>
-        <a class="tel" href="tel:34625768175">+34 625 76 81 75</a>
-        <a
-            class="facebook"
-            target="_blank"
-            href="https://www.facebook.com/dan.marley1">Facebook</a
-        >
-        <a
-            class="instagram"
-            target="_blank"
-            href="https://www.instagram.com/danpatinofotografia/">Instagram</a
-        >
+        <div class="links-mobile">
+            <a class="email" href="mailto:dan@danpatinofotografia.com">
+                dan@danpatinofotografia.com
+            </a>
+            <a class="tel" href="tel:34625768175">+34 625 76 81 75</a>
+            <a
+                class="facebook"
+                target="_blank"
+                href="https://www.facebook.com/dan.marley1">Facebook</a
+            >
+            <a
+                class="instagram"
+                target="_blank"
+                href="https://www.instagram.com/danpatinofotografia/"
+                >Instagram</a
+            >
+        </div>
     </div>
 </section>
 
@@ -35,6 +55,8 @@ import { Form } from "./Form";
         display: flex;
         flex-direction: column;
         padding: 120px 16px 60px;
+        max-width: 1280px;
+        margin: auto;
     }
 
     .text {
@@ -50,7 +72,6 @@ import { Form } from "./Form";
         margin-bottom: 8px;
         text-decoration: none;
         color: #e96862;
-        font-size: 16px;
         transition: color 0.1s;
     }
 
@@ -61,5 +82,45 @@ import { Form } from "./Form";
     .form {
         display: flex;
         flex-direction: column;
+    }
+
+    .links-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links {
+        display: none;
+    }
+
+    @media (width >= 768px) {
+        section {
+            flex-direction: row;
+            gap: 16px;
+        }
+
+        .text {
+            width: 50%;
+        }
+
+        .form {
+            width: 50%;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .links-mobile {
+            display: none;
+        }
+    }
+
+    @media (width >= 1024px) {
+        section {
+            padding: 120px 32px 120px;
+            gap: 32px;
+        }
     }
 </style>

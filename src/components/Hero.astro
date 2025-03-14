@@ -27,6 +27,8 @@ import Dan from "../assets/home/daniel-patino-hero-mobile.jpeg";
         justify-content: space-between;
         padding: 140px 16px 0;
         position: relative;
+        max-width: 1280px;
+        margin: auto;
     }
 
     section::after {
@@ -41,6 +43,7 @@ import Dan from "../assets/home/daniel-patino-hero-mobile.jpeg";
 
     .text {
         margin-bottom: 50px;
+        width: 100%;
     }
 
     span {
@@ -53,7 +56,7 @@ import Dan from "../assets/home/daniel-patino-hero-mobile.jpeg";
         font-size: 18px;
         font-weight: 400;
         color: #fff;
-        letter-spacing: 1.45vw;
+        letter-spacing: 0.5vw;
         white-space: nowrap;
         text-transform: uppercase;
         background-color: #c14a4a;
@@ -63,12 +66,70 @@ import Dan from "../assets/home/daniel-patino-hero-mobile.jpeg";
     }
 
     p.description {
-        line-height: 22px;
-        font-size: 16px;
+        text-wrap-style: pretty;
     }
 
     img {
         width: 100%;
         height: auto;
+    }
+
+    @media (width >= 410px) {
+        p.role {
+            letter-spacing: 1.45vw;
+        }
+    }
+
+    @media (width >= 768px) {
+        section {
+            flex-direction: row;
+        }
+
+        .text {
+            width: 50%;
+            margin-bottom: 0;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+        }
+
+        p.role {
+            letter-spacing: 0.7vw;
+        }
+    }
+
+    @media (width >= 1024px) {
+        section {
+            padding: 120px 32px 0;
+        }
+
+        p.role {
+            letter-spacing: 10px;
+        }
+
+        h1 {
+            font-size: 52px;
+        }
+
+        .text {
+            width: 45%;
+        }
+    }
+
+    @media (width >= 1280px) {
+        h1 {
+            font-size: 70px;
+        }
+
+        p.role {
+            letter-spacing: 14px;
+            font-size: 22px;
+        }
+
+        .text {
+            width: 50%;
+        }
     }
 </style>
