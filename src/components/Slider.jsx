@@ -4,34 +4,24 @@ import { LeftCaret } from "./icons/LeftCaret";
 import { RightCaret } from "./icons/RightCaret";
 import "../styles/slider.css";
 
-const images = [
-    "dan-patino-fotografia-contatti.jpg",
-    "dan-patino-fotografia-matrimonio-portfolio-1.jpg",
-    "dan-patino-fotografia-moda-portfolio-1.jpg",
-    "dan-patino-fotografia-ritratto-1.jpg",
-    "daniel-patino-hero-mobile.jpeg",
-]
-
-export function Slider({ isSliderOpen, setIsSliderOpen }) {
+export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
     const sliderRef = useRef(null);
-    const size = images.length - 1;
-    const [position, setPosition] = useState(0);
+    const size = {
+        "bodas": 133,
+        "retratos": 48,
+        "moda": 3
+    }
+    const [position, setPosition] = useState(1);
+    const [thumbnailOffset, setThumbnailOffset] = useState(0);
+    const thumbnailsRef = useRef(null);
 
     const handleLeftClick = () => {
-        if (position === 0) {
-            setPosition(size);
-        } else {
-            setPosition(position - 1);
-        }
-    }
+        setPosition((prev) => (prev === 1 ? size[selectedPortfolio] : prev - 1));
+    };
 
     const handleRightClick = () => {
-        if (position === size) {
-            setPosition(0);
-        } else {
-            setPosition(position + 1);
-        }
-    }
+        setPosition((prev) => (prev === size[selectedPortfolio] ? 1 : prev + 1));
+    };
 
     const handleKeyUp = (e) => {
         if (e.key === "Escape") {
@@ -41,13 +31,22 @@ export function Slider({ isSliderOpen, setIsSliderOpen }) {
         } else if (e.key === "ArrowRight") {
             handleRightClick();
         }
-    }
+    };
 
     useEffect(() => {
         if (sliderRef.current) {
             sliderRef.current.focus();
         }
     }, [isSliderOpen]);
+
+    useEffect(() => {
+        if (thumbnailsRef.current) {
+            const selectedThumbnail = thumbnailsRef.current.children[position - 1];
+            if (selectedThumbnail) {
+                selectedThumbnail.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+        }
+    }, [position]);
 
     if (!isSliderOpen) return null;
 
@@ -69,7 +68,20 @@ export function Slider({ isSliderOpen, setIsSliderOpen }) {
             </div>
             <div
                 className="slider-image"
-                style={{ backgroundImage: `url(/landing/${images[position]})` }}>
+                style={{ backgroundImage: `url('/portafolio/${selectedPortfolio}/${selectedPortfolio} ${position}.jpg')` }}>
+            </div>
+            <div className="thumbnail-container">
+                <div className="thumbnails" ref={thumbnailsRef}>
+                    {Array.from({ length: size[selectedPortfolio] }, (_, i) => i + 1).map((num) => (
+                        <img
+                            key={num}
+                            className={`thumbnail ${position === num ? "selected" : ""}`}
+                            src={`/portafolio/${selectedPortfolio}/${selectedPortfolio} ${num}.jpg`}
+                            alt={`Miniatura ${num}`}
+                            onClick={() => setPosition(num)}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

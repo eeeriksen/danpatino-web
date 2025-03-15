@@ -46,17 +46,17 @@ section {
     z-index: 1;
 }
 
-.div1 {
+.bodas {
     grid-row: span 2 / span 2;
-    background-image: url("/landing/dan-patino-fotografia-matrimonio-portfolio-1.jpg");
+    background-image: url("/portafolio/bodas/bodas 38.jpg");
 }
 
-.div2 {
+.retratos {
     grid-row: span 2 / span 2;
-    background-image: url("/landing/dan-patino-fotografia-ritratto-1.jpg");
+    background-image: url("/portafolio/retratos/retratos 44.jpg");
 }
 
-.div3 {
+.moda {
     grid-column: span 2 / span 2;
     grid-row: span 2 / span 2;
     grid-row-start: 3;
@@ -90,13 +90,13 @@ section {
     .parent h3 {
         font-size: 40px;
         opacity: 0;
-        transition: all 0.1s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 
     .parent div::before {
         height: 0%;
         background: rgba(0, 0, 0, 0.4);
-        transition: all 0.1s ease-in-out;
+
     }
 
     .parent div:hover::before {

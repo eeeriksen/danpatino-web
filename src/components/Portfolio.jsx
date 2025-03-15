@@ -4,11 +4,13 @@ import '../styles/portfolio.css';
 
 export function Portfolio() {
     const [isSliderOpen, setIsSliderOpen] = useState(false);
+    const [selectedPortfolio, setSelectedPortfolio] = useState(null);
 
-    const handleOpenSlider = () => {
+    const handleOpenSlider = (e) => {
         if (isSliderOpen) {
             document.body.style.overflow = 'scroll';
         } else {
+            setSelectedPortfolio(e.target.className);
             document.body.style.overflow = 'hidden';
         }
         setIsSliderOpen(!isSliderOpen);
@@ -26,18 +28,19 @@ export function Portfolio() {
             </div>
 
             <div className="parent">
-                <div onClick={handleOpenSlider} className="div1">
-                    <h3>Matrimonio</h3>
+                <div onClick={handleOpenSlider} className="bodas">
+                    <h3>Bodas</h3>
                 </div>
-                <div onClick={handleOpenSlider} className="div2">
-                    <h3>Retrato</h3>
+                <div onClick={handleOpenSlider} className="retratos">
+                    <h3>Retratos</h3>
                 </div>
-                <div onClick={handleOpenSlider} className="div3">
+                <div onClick={handleOpenSlider} className="moda">
                     <h3>Moda</h3>
                 </div>
             </div>
 
             <Slider
+                selectedPortfolio={selectedPortfolio}
                 isSliderOpen={isSliderOpen}
                 setIsSliderOpen={handleOpenSlider}
             />
