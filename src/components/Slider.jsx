@@ -25,13 +25,18 @@ export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
 
     const handleKeyUp = (e) => {
         if (e.key === "Escape") {
-            setIsSliderOpen();
+            closeSlider();
         } else if (e.key === "ArrowLeft") {
             handleLeftClick();
         } else if (e.key === "ArrowRight") {
             handleRightClick();
         }
     };
+
+    const closeSlider = (e) => {
+        setPosition(1);
+        setIsSliderOpen();
+    }
 
     useEffect(() => {
         if (sliderRef.current) {
@@ -57,7 +62,7 @@ export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
             ref={sliderRef}
             tabIndex="-1"
         >
-            <div onClick={setIsSliderOpen}>
+            <div onClick={closeSlider}>
                 <Close />
             </div>
             <div onClick={handleLeftClick}>
@@ -76,7 +81,7 @@ export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
                         <img
                             key={num}
                             className={`thumbnail ${position === num ? "selected" : ""}`}
-                            src={`/portafolio/${selectedPortfolio}/${selectedPortfolio} ${num}.jpg`}
+                            src={`/portafolio/${selectedPortfolio}/miniaturas/${selectedPortfolio} ${num}.jpg`}
                             alt={`Miniatura ${num}`}
                             onClick={() => setPosition(num)}
                         />
