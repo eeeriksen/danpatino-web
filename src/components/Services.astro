@@ -11,13 +11,14 @@ import Corporativa from "../../public/icons/briefcase.png";
         <hr />
         <p>
             Ofrezco fotografía de retratos, moda, bodas y corporativa, creando
-            imágenes que reflejan autenticidad, estilo y profesionalismo
+            imágenes que reflejan autenticidad, estilo y profesionalismo.
         </p>
     </div>
     <div class="services">
         <div title="Retratos">
             <img src={Retratos.src} alt="Retratos" />
             <h3>Retratos</h3>
+            <hr />
             <p>
                 Sesiones fotográficas profesionales que reflejan tu esencia y
                 personalidad con un estilo natural y auténtico.
@@ -26,6 +27,7 @@ import Corporativa from "../../public/icons/briefcase.png";
         <div title="Moda">
             <img src={Moda.src} alt="Moda" />
             <h3>Moda</h3>
+            <hr />
             <p>
                 Imágenes impactantes para modelos y marcas que transmiten estilo
                 y creatividad.
@@ -34,6 +36,7 @@ import Corporativa from "../../public/icons/briefcase.png";
         <div title="Bodas">
             <img src={Bodas.src} alt="Bodas" />
             <h3>Bodas</h3>
+            <hr />
             <p>
                 Capturo cada emoción y detalle de tu día especial para que tus
                 recuerdos duren toda la vida.
@@ -42,6 +45,7 @@ import Corporativa from "../../public/icons/briefcase.png";
         <div title="Corporativa">
             <img src={Corporativa.src} alt="Corporativa" />
             <h3>Corporativo</h3>
+            <hr />
             <p>
                 Retratos y contenido visual que refuerzan la identidad y
                 profesionalismo de tu empresa.
@@ -50,17 +54,25 @@ import Corporativa from "../../public/icons/briefcase.png";
     </div>
 </section>
 
-<style>
+<style scoped>
     section {
         display: flex;
         flex-direction: column;
-        padding: 120px 16px 0;
+        padding: 60px 16px 0;
         max-width: 1280px;
         margin: auto;
     }
 
     .intro {
         margin-bottom: 50px;
+    }
+
+    .services hr {
+        width: 30px;
+        height: 2px;
+        background-color: #c14a4a;
+        border: none;
+        margin: 0px 0 6px;
     }
 
     .services {
@@ -75,7 +87,7 @@ import Corporativa from "../../public/icons/briefcase.png";
     }
 
     img {
-        width: 70px;
+        width: 50px;
         height: auto;
         filter: invert(1);
         margin-bottom: 20px;

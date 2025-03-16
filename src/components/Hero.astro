@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import Dan from "../../public/landing/daniel-patino-hero-mobile.jpeg";
-import Daniel from "../../public/landing/daniel-camara.jpeg";
+import Daniel from "../../public/landing/daniel-hero.jpeg";
+import Camera from "../../public/icons/camera.png";
 ---
 
 <section id="inicio">
     <div class="text">
+        <Image class="icono" src={Camera} alt="Icono de lentes de cámara" />
         <h1 class="name">Daniel Patiño</h1>
         <p class="role">Fotógrafo Profesional</p>
         <p class="description">
@@ -13,11 +14,12 @@ import Daniel from "../../public/landing/daniel-camara.jpeg";
             artístico y profesional, transformando cada imagen en una historia
             que perdura en el tiempo.
         </p>
+        <a class="contact-button" href="#contacto">Contáctame</a>
     </div>
-    <Image src={Daniel} alt="Daniel Patiño" />
+    <Image src={Daniel} alt="Fotógrafo Daniel Patiño con cámara y lentes" />
 </section>
 
-<style>
+<style scoped>
     section {
         background-color: #000;
         width: 100%;
@@ -45,12 +47,16 @@ import Daniel from "../../public/landing/daniel-camara.jpeg";
     .text {
         margin-bottom: 50px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 340px;
     }
 
-    span {
-        width: 50px;
-        height: 20px;
-        background-color: #e96862;
+    .icono {
+        filter: invert(1);
+        width: 40px;
+        height: auto;
+        margin-bottom: 10px;
     }
 
     p.role {
@@ -75,6 +81,30 @@ import Daniel from "../../public/landing/daniel-camara.jpeg";
         height: auto;
     }
 
+    .contact-button {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        background-color: #c14a4a;
+        margin-top: 30px;
+        width: fit-content;
+        font-weight: 600;
+        box-shadow:
+            -4px 4px 0px 0px #fff,
+            -3px 3px 0px 0px #fff,
+            -2px 2px 0px 0px #fff,
+            -1px 1px 0px 0px #fff;
+        margin-left: 4px;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .contact-button:hover {
+        margin-top: 34px;
+        margin-left: 0;
+        box-shadow: unset;
+    }
+
     @media (width >= 410px) {
         p.role {
             letter-spacing: 1.45vw;
@@ -89,10 +119,15 @@ import Daniel from "../../public/landing/daniel-camara.jpeg";
         .text {
             width: 50%;
             margin-bottom: 0;
+            height: 360px;
+        }
+
+        .icono {
+            width: 50px;
         }
 
         img {
-            width: 50%;
+            width: 40%;
             height: auto;
         }
 
@@ -116,6 +151,16 @@ import Daniel from "../../public/landing/daniel-camara.jpeg";
 
         .text {
             width: 45%;
+            height: 400px;
+        }
+
+        .icono {
+            width: 60px;
+        }
+
+        .contact-button {
+            padding: 14px 26px;
+            font-size: 18px;
         }
     }
 
@@ -131,6 +176,16 @@ import Daniel from "../../public/landing/daniel-camara.jpeg";
 
         .text {
             width: 50%;
+            height: 480px;
+        }
+
+        .icono {
+            width: 70px;
+        }
+
+        .contact-button {
+            padding: 16px 32px;
+            font-size: 20px;
         }
     }
 </style>

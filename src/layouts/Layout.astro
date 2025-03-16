@@ -3,18 +3,68 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@100..900&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Astro Basics</title>
+		<title>
+			Fotógrafo en Madrid | Bodas, Retratos y Moda - Daniel Patiño
+		</title>
+		<meta
+			name="description"
+			content="Fotógrafo profesional en Madrid especializado en bodas, retratos y fotografía de moda. Capturando momentos inolvidables con un enfoque artístico y profesional."
+		/>
+
+		<meta
+			name="keywords"
+			content="fotógrafo en Madrid, fotógrafo de bodas Madrid, fotografía de retratos, fotógrafo profesional, fotógrafo de moda, fotografía artística, sesiones fotográficas Madrid, producción audiovisual Madrid, fotógrafo freelance Madrid"
+		/>
+		<meta name="author" content="Daniel Patiño" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph (para redes sociales) -->
+		<meta
+			property="og:title"
+			content="Fotógrafo en Madrid | Bodas, Retratos y Moda - Daniel Patiño"
+		/>
+		<meta
+			property="og:description"
+			content="Capturando emociones y momentos inolvidables con creatividad y pasión en Madrid."
+		/>
+		<meta
+			property="og:image"
+			content="https://danpatinofotografia.com/landing/daniel-hero.jpg"
+		/>
+		<meta property="og:url" content="https://danpatinofotografia.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_ES" />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://danpatinofotografia.com" />
+
+		<!-- Datos estructurados JSON-LD -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Daniel Patiño",
+				"url": "https://danpatinofotografia.com",
+				"image": "https://danpatinofotografia.com/landing/daniel-hero.jpg",
+				"jobTitle": "Fotógrafo Profesional",
+				"description": "Fotógrafo profesional en Madrid especializado en bodas, retratos y fotografía de moda.",
+				"sameAs": [
+					"https://www.instagram.com/danpatinofotografia/",
+					"https://www.facebook.com/danpatinofotografia"
+				]
+			}
+		</script>
 	</head>
 	<body>
 		<slot />

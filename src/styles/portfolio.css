@@ -2,7 +2,7 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 120px 16px 0;
+    padding: 60px 16px 0;
     max-width: 1280px;
     margin: auto;
 }
@@ -27,11 +27,12 @@ section {
     flex-direction: column-reverse;
     padding: 6px;
     position: relative;
+    background-position: center;
 }
 
 .parent h3 {
     z-index: 10;
-    font-family: "Outfit", sans-serif;
+    font-family: "Alfa Slab One", serif;
     font-size: 16px;
 }
 
@@ -48,19 +49,19 @@ section {
 
 .bodas {
     grid-row: span 2 / span 2;
-    background-image: url("/portafolio/bodas/bodas 38.jpg");
+    background-image: url("/portafolio/bodas/bodas 48.jpg");
 }
 
 .retratos {
     grid-row: span 2 / span 2;
-    background-image: url("/portafolio/retratos/retratos 44.jpg");
+    background-image: url("/portafolio/retratos/retratos 49.jpg");
 }
 
 .moda {
     grid-column: span 2 / span 2;
     grid-row: span 2 / span 2;
     grid-row-start: 3;
-    background-image: url("/landing/dan-patino-fotografia-moda-portfolio-1.jpg");
+    background-image: url("/portafolio/moda/moda 10.jpg");
 }
 
 @media (width >=768px) {
@@ -95,7 +96,7 @@ section {
 
     .parent div::before {
         height: 0%;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.7);
 
     }
 

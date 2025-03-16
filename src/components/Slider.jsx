@@ -8,8 +8,8 @@ export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
     const sliderRef = useRef(null);
     const size = {
         "bodas": 133,
-        "retratos": 48,
-        "moda": 3
+        "retratos": 56,
+        "moda": 11
     }
     const [position, setPosition] = useState(1);
     const [thumbnailOffset, setThumbnailOffset] = useState(0);

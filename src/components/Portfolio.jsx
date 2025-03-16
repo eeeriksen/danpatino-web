@@ -8,10 +8,10 @@ export function Portfolio() {
 
     const handleOpenSlider = (e) => {
         if (isSliderOpen) {
-            document.body.style.overflow = 'scroll';
+            document.body.style.overflowY = 'scroll';
         } else {
             setSelectedPortfolio(e.target.className);
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflowY = 'hidden';
         }
         setIsSliderOpen(!isSliderOpen);
     }
