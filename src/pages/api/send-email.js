@@ -18,7 +18,7 @@ export async function POST({ request }) {
         const { name, email, message } = await request.json();
         const { data, error } = await resend.emails.send({
             from: `${name} desde danpatinofotogradia.com <onboarding@resend.dev>`,
-            to: ['eriksen.lezama@gmail.com'],
+            to: ['danpatinofotografia@gmail.com'],
             subject: 'Mensaje del formulario de contacto de danpatinofotogradia.com',
             html: `<p>Nombre: ${name}</p><p>Email: ${email}</p><p>Mensaje: ${message}</p>`,
         });
