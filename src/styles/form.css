@@ -1,4 +1,5 @@
-form {
+form,
+.form-result {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -52,8 +53,29 @@ button:hover {
     box-shadow: unset;
 }
 
+button:disabled {
+    margin-top: 34px;
+    margin-left: 0;
+    box-shadow: unset;
+    background-color: #e17d7d;
+}
+
+.success {
+    font-size: 26px;
+    background-color: #c14a4a;
+    color: #fff;
+    padding: 20px;
+}
+
+.error {
+    color: #c14a4a;
+    font-size: 26px;
+}
+
 @media (width >=1024px) {
-    form {
+
+    form,
+    .form-result {
         height: 450px;
     }
 
@@ -70,7 +92,9 @@ button:hover {
 }
 
 @media (width >=1280px) {
-    form {
+
+    form,
+    .form-result {
         height: 500px;
     }
 

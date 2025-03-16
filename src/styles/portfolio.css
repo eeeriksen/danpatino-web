@@ -49,12 +49,12 @@ section {
 
 .bodas {
     grid-row: span 2 / span 2;
-    background-image: url("/portafolio/bodas/bodas 48.jpg");
+    background-image: url("/portafolio/bodas/bodas 134.jpg");
 }
 
 .retratos {
     grid-row: span 2 / span 2;
-    background-image: url("/portafolio/retratos/retratos 49.jpg");
+    background-image: url("/portafolio/retratos/retratos 50.jpg");
 }
 
 .moda {

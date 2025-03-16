@@ -7,7 +7,7 @@ import "../styles/slider.css";
 export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
     const sliderRef = useRef(null);
     const size = {
-        "bodas": 133,
+        "bodas": 134,
         "retratos": 56,
         "moda": 11
     }

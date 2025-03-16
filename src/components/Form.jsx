@@ -21,9 +21,9 @@ export function Form() {
                 body: JSON.stringify({ name, email, message }),
             });
 
-            const result = await response.json();
+            const { data, error } = await response.json();
 
-            if (!response.ok) {
+            if (error) {
                 setLoading(false);
                 setError(true);
             } else {
@@ -35,34 +35,49 @@ export function Form() {
         }
     }
 
+    if (error) {
+        return (
+            <div className='form-result'>
+                <p className='error'>Ocurrió un error, intenta de nuevo recargando la página.</p>
+            </div>
+        )
+    }
+
+    if (success) {
+        return (
+            <div className='form-result'>
+                <p className='success'>¡Gracias por tu mensaje! Te contactaré pronto.</p>
+            </div>
+        )
+    }
+
     return (
-        <form id="contact-form" onSubmit={handleSubmit}>
-            <input
-                required
-                placeholder='Nombre'
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
-            <input
-                required
-                placeholder='Email'
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <textarea
-                required
-                placeholder='Mensaje'
-                value={message}
-                minLength="5"
-                onChange={(e) => setMessage(e.target.value)}
+        <>
+            {!success && !error && <form onSubmit={handleSubmit}>
+                <input
+                    required
+                    placeholder='Nombre'
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                    required
+                    placeholder='Email'
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <textarea
+                    required
+                    placeholder='Mensaje'
+                    value={message}
+                    minLength="5"
+                    onChange={(e) => setMessage(e.target.value)}
 
-            ></textarea>
-            <button disabled={loading} type='submit'>Enviar</button>
-
-            {error && <p className='success'>¡Gracias por tu mensaje! Te contactaré pronto.</p>}
-            {success && <p className='error'>Ocurrió un error, intenta de nuevo recargando la página.</p>}
-        </form>
+                ></textarea>
+                <button disabled={loading} type='submit'>Enviar</button>
+            </form>}
+        </>
     );
 }
