@@ -3,24 +3,22 @@ import { Close } from "./icons/Close";
 import { LeftCaret } from "./icons/LeftCaret";
 import { RightCaret } from "./icons/RightCaret";
 import "../styles/slider.css";
+import { retratos, moda, bodas } from "../consts/files";
 
 export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
     const sliderRef = useRef(null);
-    const size = {
-        "bodas": 134,
-        "retratos": 56,
-        "moda": 11
-    }
+    const files = { bodas, retratos, moda }
     const [position, setPosition] = useState(1);
     const [thumbnailOffset, setThumbnailOffset] = useState(0);
     const thumbnailsRef = useRef(null);
+    const LENGTH = files[selectedPortfolio]?.length
 
     const handleLeftClick = () => {
-        setPosition((prev) => (prev === 1 ? size[selectedPortfolio] : prev - 1));
+        setPosition((prev) => (prev === 1 ? LENGTH : prev - 1));
     };
 
     const handleRightClick = () => {
-        setPosition((prev) => (prev === size[selectedPortfolio] ? 1 : prev + 1));
+        setPosition((prev) => (prev === LENGTH ? 1 : prev + 1));
     };
 
     const handleKeyUp = (e) => {
@@ -73,15 +71,15 @@ export function Slider({ isSliderOpen, setIsSliderOpen, selectedPortfolio }) {
             </div>
             <div
                 className="slider-image"
-                style={{ backgroundImage: `url('/portafolio/${selectedPortfolio}/${selectedPortfolio} ${position}.jpg')` }}>
+                style={{ backgroundImage: `url('/portafolio/${selectedPortfolio}/${files[selectedPortfolio][position - 1]}` }}>
             </div>
             <div className="thumbnail-container">
                 <div className="thumbnails" ref={thumbnailsRef}>
-                    {Array.from({ length: size[selectedPortfolio] }, (_, i) => i + 1).map((num) => (
+                    {Array.from({ length: LENGTH }, (_, i) => i + 1).map((num) => (
                         <img
                             key={num}
                             className={`thumbnail ${position === num ? "selected" : ""}`}
-                            src={`/portafolio/${selectedPortfolio}/miniaturas/${selectedPortfolio} ${num}.jpg`}
+                            src={`/portafolio/${selectedPortfolio}/miniaturas/${files[selectedPortfolio][num - 1]}`}
                             alt={`Miniatura ${num}`}
                             onClick={() => setPosition(num)}
                         />
