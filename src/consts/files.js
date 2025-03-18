@@ -187,10 +187,10 @@ export const retratos = [
     "retratos 50.jpg",
     "retratos 51.jpg",
     "retratos 52.jpg",
+    "retratos 56.jpg",
     "retratos 53.jpg",
     "retratos 54.jpg",
     "retratos 55.jpg",
-    "retratos 56.jpg",
 ]
 
 export const moda = [
@@ -199,10 +199,10 @@ export const moda = [
     "moda 3.jpg",
     "moda 4.jpg",
     "moda 5.jpg",
+    "moda 10.jpg",
     "moda 6.jpg",
     "moda 7.jpg",
+    "moda 11.jpg",
     "moda 8.jpg",
     "moda 9.jpg",
-    "moda 10.jpg",
-    "moda 11.jpg",
 ]
