@@ -48,6 +48,10 @@ button {
 }
 
 button:hover {
+    background-color: #982727;
+}
+
+button:active {
     margin-top: 34px;
     margin-left: 0;
     box-shadow: unset;
